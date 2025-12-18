@@ -16,7 +16,8 @@ import Order from './pages/Order'
 import PageNotFound from './pages/PageNotFound'
 import Ai from './components/Ai'
 
-export const serverurl="https://e-commerce-backend-n1dw.onrender.com"
+export const serverurl="https://e-commerce-backend-ggxl.onrender.com"
+
 function App() {
   const {userData}=useContext(userDataContext);
    let location=useLocation()
