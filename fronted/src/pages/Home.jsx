@@ -25,10 +25,10 @@ function Home() {
 
   return (
     <div className='overflow-x-hidden relative top-[70px]'>
-    <div className="w-[100vw] lg:h-[100vh]  md:h-[50vh] sm:h-[30vh] flex bg-gradient-to-l from-[#141414] to-[#0c2025]">
+    <div className="w-[100vw] h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[100vh] flex flex-col-reverse md:flex-row bg-gradient-to-l from-[#141414] to-[#0c2025]">
 
-     {/* Right side = Hero */}
-      <div className="w-[40%] h-full">
+     {/* Hero Section */}
+      <div className="w-full md:w-[40%] h-[50%] md:h-full flex items-center justify-center">
         <Hero
           heroCount={heroCount}
           setHeroCount={setHeroCount}
@@ -36,13 +36,10 @@ function Home() {
         />
       </div>
 
-
-      {/* Left side = Background */}
-      <div className="w-[60%] h-full">
+      {/* Background Section */}
+      <div className="w-full md:w-[60%] h-[50%] md:h-full">
         <Background heroCount={heroCount} />
       </div>
-
-      
     </div>
     <Products/>
    <OurPolicy/>

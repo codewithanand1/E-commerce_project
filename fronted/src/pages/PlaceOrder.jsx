@@ -120,72 +120,62 @@ function PlaceOrder() {
 
 
   return (
-    <div className='w-[100vw] min-h-[100vh] bg-gradient-to-l from-[#141414] to-[#0c2025] flex item-center justify-center flex-col md:flex-row gap-[50px] relative'>
-    <div className='lg:w-[50%] w-[100%] h-[100%] flex items-center lg:mt-[0px]  mt-[90px]'>
-      <form className='lg:w-[70%] w-[95%] lg:h-[70%] h-[100%]' onSubmit={onSubmitHandler}>
-        <div className='py-[10px]'>
+    <div className='w-[100vw] min-h-[100vh] bg-gradient-to-l from-[#141414] to-[#0c2025] flex items-start justify-center flex-col lg:flex-row gap-[30px] sm:gap-[50px] relative px-4 lg:px-0'>
+    <div className='w-full lg:w-[50%] flex items-center justify-center mt-[80px] lg:mt-[100px]'>
+      <form className='w-full max-w-[600px] lg:w-[70%]' onSubmit={onSubmitHandler}>
+        <div className='py-[10px] mb-[20px]'>
           <Tittle  text1={"DELIVERY"} text2={"INFORMATION"}/>
         </div>
-        <div className='w-[100%] h-[70px] flex items-center justify-between px-[10px]'>
-            <input type='text' placeholder='Fisrt name' className='w-[48%] h-[50px] rounded-md bg-slate-700 placeholder:text-white text-[18px] px-[20px] shadow-sm shadow-[#343434] ' onChange={onchangeHandle} name='firstName' value={formData.firstName} required/>
-
-
-            <input type='text' placeholder='Last name' className='w-[48%] h-[50px] rounded-md bg-slate-700 placeholder:text-white text-[18px] px-[20px] shadow-sm shadow-[#343434] ' onChange={onchangeHandle} name='lastName' value={formData.lastName} required/>
-            
-
-        </div>
-
-          <div className='w-[100%] h-[70px] flex items-center justify-between px-[10px]'>
-            <input type='email' placeholder='Enter email' className='w-[100%] h-[50px] rounded-md bg-slate-700 placeholder:text-white text-[18px] px-[20px] shadow-sm shadow-[#343434] ' onChange={onchangeHandle} name='email' value={formData.email} required/>
-  
-        </div>
-
-
-         <div className='w-[100%] h-[70px] flex items-center justify-between px-[10px]'>
-            <input type='text' placeholder='Street' className='w-[100%] h-[50px] rounded-md bg-slate-700 placeholder:text-white text-[18px] px-[20px] shadow-sm shadow-[#343434] ' onChange={onchangeHandle} name='street' value={formData.street}required/>
         
-        </div>
-         <div className='w-[100%] h-[70px] flex items-center justify-between px-[10px]'>
-            <input type='text' placeholder='City' className='w-[48%] h-[50px] rounded-md bg-slate-700 placeholder:text-white text-[18px] px-[20px] shadow-sm shadow-[#343434] ' onChange={onchangeHandle} name='city' value={formData.city}required/>
-
-
-            <input type='text' placeholder='State' className='w-[48%] h-[50px] rounded-md bg-slate-700 placeholder:text-white text-[18px] px-[20px] shadow-sm shadow-[#343434] ' name='state' onChange={onchangeHandle} value={formData.state}required/>
-            
-
+        <div className='w-[100%] flex flex-col sm:flex-row items-center justify-between gap-[15px] sm:gap-[10px] px-[10px] mb-[15px]'>
+            <input type='text' placeholder='First name' className='w-full sm:w-[48%] h-[45px] sm:h-[50px] rounded-md bg-slate-700 placeholder:text-white text-[16px] sm:text-[18px] px-[15px] sm:px-[20px] shadow-sm shadow-[#343434]' onChange={onchangeHandle} name='firstName' value={formData.firstName} required/>
+            <input type='text' placeholder='Last name' className='w-full sm:w-[48%] h-[45px] sm:h-[50px] rounded-md bg-slate-700 placeholder:text-white text-[16px] sm:text-[18px] px-[15px] sm:px-[20px] shadow-sm shadow-[#343434]' onChange={onchangeHandle} name='lastName' value={formData.lastName} required/>
         </div>
 
-
-
-        <div className='w-[100%] h-[70px] flex items-center justify-between px-[10px]'>
-            <input type='text' placeholder='Pincode' className='w-[48%] h-[50px] rounded-md bg-slate-700 placeholder:text-white text-[18px] px-[20px] shadow-sm shadow-[#343434] '  onChange={onchangeHandle} name='pincode' value={formData.pincode}required/>
-
-
-            <input type='text' placeholder='Country' className='w-[48%] h-[50px] rounded-md bg-slate-700 placeholder:text-white text-[18px] px-[20px] shadow-sm shadow-[#343434] ' onChange={onchangeHandle} name='country' value={formData.country}required/>
-            
-
+        <div className='w-[100%] flex items-center justify-between px-[10px] mb-[15px]'>
+            <input type='email' placeholder='Enter email' className='w-[100%] h-[45px] sm:h-[50px] rounded-md bg-slate-700 placeholder:text-white text-[16px] sm:text-[18px] px-[15px] sm:px-[20px] shadow-sm shadow-[#343434]' onChange={onchangeHandle} name='email' value={formData.email} required/>
         </div>
-         <div className='w-[100%] h-[70px] flex items-center justify-between px-[10px]'>
-            <input type='number' placeholder='Phone' className='w-[100%] h-[50px] rounded-md bg-slate-700 placeholder:text-white text-[18px] px-[20px] shadow-sm shadow-[#343434] ' onChange={onchangeHandle} name='phone' value={formData.phone}required/>
+
+        <div className='w-[100%] flex items-center justify-between px-[10px] mb-[15px]'>
+            <input type='text' placeholder='Street' className='w-[100%] h-[45px] sm:h-[50px] rounded-md bg-slate-700 placeholder:text-white text-[16px] sm:text-[18px] px-[15px] sm:px-[20px] shadow-sm shadow-[#343434]' onChange={onchangeHandle} name='street' value={formData.street} required/>
+        </div>
         
+        <div className='w-[100%] flex flex-col sm:flex-row items-center justify-between gap-[15px] sm:gap-[10px] px-[10px] mb-[15px]'>
+            <input type='text' placeholder='City' className='w-full sm:w-[48%] h-[45px] sm:h-[50px] rounded-md bg-slate-700 placeholder:text-white text-[16px] sm:text-[18px] px-[15px] sm:px-[20px] shadow-sm shadow-[#343434]' onChange={onchangeHandle} name='city' value={formData.city} required/>
+            <input type='text' placeholder='State' className='w-full sm:w-[48%] h-[45px] sm:h-[50px] rounded-md bg-slate-700 placeholder:text-white text-[16px] sm:text-[18px] px-[15px] sm:px-[20px] shadow-sm shadow-[#343434]' name='state' onChange={onchangeHandle} value={formData.state} required/>
         </div>
 
-        <div>
-          <button type='submit' className='text-[18px] active:bg-amber-500 cursor-pointer bg-[#3bcee848] py-[10px] px-[50px] rounded-2xl text-white flex items-center justify-center gap-[20px] absolute lg:right-[20%] bottom-[2%] right-[35%] border-[1px] border-[#80808049] ml-[20px] mt-[20px]'>Place Order</button>
+        <div className='w-[100%] flex flex-col sm:flex-row items-center justify-between gap-[15px] sm:gap-[10px] px-[10px] mb-[15px]'>
+            <input type='text' placeholder='Pincode' className='w-full sm:w-[48%] h-[45px] sm:h-[50px] rounded-md bg-slate-700 placeholder:text-white text-[16px] sm:text-[18px] px-[15px] sm:px-[20px] shadow-sm shadow-[#343434]' onChange={onchangeHandle} name='pincode' value={formData.pincode} required/>
+            <input type='text' placeholder='Country' className='w-full sm:w-[48%] h-[45px] sm:h-[50px] rounded-md bg-slate-700 placeholder:text-white text-[16px] sm:text-[18px] px-[15px] sm:px-[20px] shadow-sm shadow-[#343434]' onChange={onchangeHandle} name='country' value={formData.country} required/>
+        </div>
+        
+        <div className='w-[100%] flex items-center justify-between px-[10px] mb-[20px]'>
+            <input type='number' placeholder='Phone' className='w-[100%] h-[45px] sm:h-[50px] rounded-md bg-slate-700 placeholder:text-white text-[16px] sm:text-[18px] px-[15px] sm:px-[20px] shadow-sm shadow-[#343434]' onChange={onchangeHandle} name='phone' value={formData.phone} required/>
         </div>
       </form>
      
     </div>
-     <div className='lg:w-[50%] w-[100%] min-h-[100%] flex items-center justify-center gap-[30px]'>
-        <div className='lg:w-[70%] w-[90%] lg:h-[70%] h-[100%] flex items-center justify-center gap-[10px] flex-col'>
+     <div className='w-full lg:w-[50%] flex items-center justify-center gap-[20px] sm:gap-[30px] mt-[20px] lg:mt-[100px]'>
+        <div className='w-full max-w-[600px] lg:w-[70%] flex items-center justify-center gap-[15px] sm:gap-[20px] flex-col px-4 lg:px-0'>
           <CartTotal/>
-          <div className='py-[10px]'>
+          <div className='py-[10px] mb-[10px]'>
             <Tittle text1={"PAYMENT"} text2={"METHODS"}/>
           </div>
-          <div className='w-[100%] h-[30vh] lg:h-[100px] flex items-start mt-[20px] lg:mt-[0px] justify-center gap-[50px]'>
-             <button onClick={()=>setmethod('razorpay')} className={`w-[150px] h-[50px] rounded-sm ${method==='razorpay'?'border-[5px] border-blue-700 rounded-sm':''}
-             `}><img src={razorpay} className='w-[100%] h-[100%] object-fill rounded-sm' alt=""/></button>
+          <div className='w-[100%] flex items-center justify-center gap-[20px] sm:gap-[30px] lg:gap-[50px] flex-col sm:flex-row'>
+             <button onClick={()=>setmethod('razorpay')} className={`w-[120px] sm:w-[150px] h-[40px] sm:h-[50px] rounded-sm transition-all ${method==='razorpay'?'border-[3px] sm:border-[5px] border-blue-700 rounded-sm':'border-2 border-gray-400'}`}>
+               <img src={razorpay} className='w-[100%] h-[100%] object-cover rounded-sm' alt="Razorpay"/>
+             </button>
 
-             <button onClick={()=>setmethod('cod')} className={`w-[200px] h-[50px] bg-gradient-to-t from-[#95b3f8] to-[white] text-[14px] px-[20px] rounded-b-sm text-[#332f6f] font-bold ${method==='cod'?'border-[5px] border-blue-700 rounded-sm':''}`}>Cash OnDelivery</button>
+             <button onClick={()=>setmethod('cod')} className={`w-[160px] sm:w-[200px] h-[40px] sm:h-[50px] bg-gradient-to-t from-[#95b3f8] to-[white] text-[12px] sm:text-[14px] px-[15px] sm:px-[20px] rounded-b-sm text-[#332f6f] font-bold transition-all ${method==='cod'?'border-[3px] sm:border-[5px] border-blue-700 rounded-sm':'border-2 border-gray-400'}`}>
+               Cash On Delivery
+             </button>
+          </div>
+          
+          <div className='w-full flex justify-center mt-[20px] sm:mt-[30px]'>
+            <button type='submit' className='w-full sm:w-auto text-[16px] sm:text-[18px] hover:bg-amber-500 cursor-pointer bg-[#3bcee848] py-[12px] px-[30px] sm:px-[50px] rounded-2xl text-white flex items-center justify-center border-[1px] border-[#80808049] transition-colors'>
+              Place Order
+            </button>
           </div>
         </div>
       </div>

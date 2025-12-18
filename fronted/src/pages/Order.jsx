@@ -35,37 +35,36 @@ function Order() {
         loadOrderData()
     },[])
   return (
-    <div className='w-[99vw] min-h-[100vh] p-[20px] pb-[15px] overflow-hidden bg-gradient-to-l from-[#141414] to-[#0c2025]'>
-       <div className='h-[8%] w-[100%] text-center mt-[80px]'>
-        <Tittle text1={"MY"} text2={"ORDER"}/>
+    <div className='w-[100vw] min-h-[100vh] p-[10px] sm:p-[20px] pb-[15px] overflow-hidden bg-gradient-to-l from-[#141414] to-[#0c2025]'>
+       <div className='w-[100%] text-center mt-[80px] mb-[20px]'>
+        <Tittle text1={"MY"} text2={"ORDERS"}/>
        </div>
-       <div>
+       <div className='flex flex-col gap-[15px] sm:gap-[20px]'>
         {
      orderData.map((item,index)=>(
-        <div key={index} className='w-[100%] h-[10%] border-t border-b '>
-            <div className='w-[100%] h-[80%] flex items-start gap-6 bg-[#51808048] py-[10px] px-[20px] rounded-2xl relative'>
-                <img src={item.image1} alt="" className='w-[130px] h-[130px] rounded-md '/>
-                <div className='flex items-start justify-center flex-col gap-[5px]'>
-                    <p className='md:text-[25px] text-[20px] text-white'>{item.name}</p>
-                     <div className='flex items-center gap-[8px] md:gap-[20px]'>
-                        <p className='md:text-[18px] text-[12px] text-[#aaf4e7]'>{currency}{item.price}</p>
-                        <p className='md:text-[18px] text-[12px] text-[#aaf4e7]'>Quantity:{item.quantity}</p>
-                        <p className='md:text-[18px] text-[12px] text-[#aaf4e7]'>Size:{item.size}</p>
+        <div key={index} className='w-[100%] border-t border-b border-gray-600'>
+            <div className='w-[100%] flex flex-col sm:flex-row items-start gap-4 sm:gap-6 bg-[#51808048] py-[15px] px-[15px] sm:px-[20px] rounded-2xl relative'>
+                <img src={item.image1} alt="" className='w-[100px] h-[100px] sm:w-[120px] sm:h-[120px] rounded-md object-cover flex-shrink-0'/>
+                <div className='flex-1 flex flex-col gap-[8px] sm:gap-[10px] w-full'>
+                    <p className='text-[18px] sm:text-[20px] lg:text-[25px] text-white font-medium'>{item.name}</p>
+                     <div className='flex items-center gap-[10px] sm:gap-[15px] lg:gap-[20px] flex-wrap'>
+                        <p className='text-[14px] sm:text-[16px] lg:text-[18px] text-[#aaf4e7]'>{currency}{item.price}</p>
+                        <p className='text-[14px] sm:text-[16px] lg:text-[18px] text-[#aaf4e7]'>Qty: {item.quantity}</p>
+                        <p className='text-[14px] sm:text-[16px] lg:text-[18px] text-[#aaf4e7]'>Size: {item.size}</p>
                      </div>
                      <div className='flex items-center'>
-                      <p className='md:text-[18px] text-[12px] text-[#aaf4e7] '>Date:<span className='text-white pl-[10px] md:text-[16px] text-[11px]'>{new Date(item.date).toDateString()}</span></p>
+                      <p className='text-[14px] sm:text-[16px] lg:text-[18px] text-[#aaf4e7]'>Date: <span className='text-white pl-[5px] sm:pl-[10px]'>{new Date(item.date).toDateString()}</span></p>
                      </div>
                      <div className='flex items-center'>
-                         <p className='md:text-[16px] text-[12px] text-[#aaf4e7]'>Payment Method :{item.paymentMethod}</p>
+                         <p className='text-[14px] sm:text-[16px] text-[#aaf4e7]'>Payment: {item.paymentMethod}</p>
                      </div>
-                     <div className='absolute md:left-[55%] md:top-[40%] right-[2%] top-[2%]'>
-                       <div className='min-w-2 h-2 gap-[5px]'>
-                       <p className='min-w-2 h-2 rounded-full bg-green-500'></p>
-                       <p className='md:text-[17px] text-[10px] text-[#f3f9fc]'>{item.status}</p>
+                     
+                     <div className='flex items-center justify-between mt-2 sm:mt-0 sm:absolute sm:right-[20px] sm:top-[20px] gap-3'>
+                       <div className='flex items-center gap-[8px]'>
+                         <p className='w-2 h-2 rounded-full bg-green-500'></p>
+                         <p className='text-[14px] sm:text-[16px] lg:text-[17px] text-[#f3f9fc]'>{item.status}</p>
                        </div>
-                       <div className='absolute md:right-[5%] right-[2%] md:top-[40%] top-[65%]'>
-                         <button className='px-[15px] py-[7px] rounded-md bg-[#101919] text-[#f3f9fc] text-[12px] md:text-[16px] cursor-pointer active:bg-slate-500' onClick={loadOrderData}>Track Order</button>
-                       </div>
+                       <button className='px-[12px] sm:px-[15px] py-[6px] sm:py-[7px] rounded-md bg-[#101919] text-[#f3f9fc] text-[12px] sm:text-[14px] lg:text-[16px] cursor-pointer hover:bg-slate-500 transition-colors whitespace-nowrap' onClick={loadOrderData}>Track Order</button>
                      </div>
                 </div>
             </div>

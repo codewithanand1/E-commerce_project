@@ -43,25 +43,34 @@ function Lists() {
       <Nav/>
       <div className='w-[100%] h-[100%] flex items-center justify-start' >
         <Sidebar/>
-        <div className='w-[82%] h-[100%] lg:ml-[320px] md:ml-[230px] mt-[70px] flex-col gap-[30px] overflow-x-hidden py-[50px] ml-[100px]'>
-          <div className='w-[400px] h-[50px] text-[28px] md:text-[40px] mb-[20px] text-white'>All Listed Product</div>
+        <div className='w-full lg:w-[75%] lg:ml-[25%] mt-[70px] flex flex-col gap-[20px] sm:gap-[30px] overflow-x-hidden py-[30px] sm:py-[50px] px-[20px] lg:px-[40px]'>
+          <div className='w-full text-[24px] sm:text-[28px] lg:text-[40px] mb-[20px] text-white'>All Listed Products</div>
 
      {
       list?.length>0?(
-        list.map((item,index)=>(
-        <div className='w-[90%] md:h-[120px] h-[90px] bg-slate-600 rounded-xl flex items-center justify-start gap-[5px] md:gap-[30px] p-[10px] md:px-[30px]' key={index}>
-        <img src={item.image1} className='w-[30%] md:w-[120px] h-[90%] rounded-lg ' alt=''/>
-        <div className='w-[90%] h-[80%] flex flex-col items-start justify-center gap-[2px]'>
-          <div className='w-[100%] md:text-[20px] text-[15px] text-[#bef0f3]'>{item.name}</div>
-          <div className='md:text-[17px] text-[#def3da]'>{item.category}</div>
-          <div className='md:text-[17px] text-[#def3da]'>₹{item.price}</div>
+        <div className='w-full flex flex-col gap-[15px] sm:gap-[20px]'>
+        {list.map((item,index)=>(
+        <div className='w-full bg-slate-600 rounded-xl flex items-center justify-between gap-[10px] sm:gap-[20px] p-[15px] sm:p-[20px]' key={index}>
+        <img src={item.image1} className='w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] lg:w-[120px] lg:h-[120px] rounded-lg object-cover flex-shrink-0' alt=''/>
+        
+        <div className='flex-1 flex flex-col items-start justify-center gap-[5px] sm:gap-[8px] min-w-0'>
+          <div className='w-[100%] text-[14px] sm:text-[16px] lg:text-[20px] text-[#bef0f3] font-medium truncate'>{item.name}</div>
+          <div className='text-[12px] sm:text-[14px] lg:text-[17px] text-[#def3da]'>{item.category}</div>
+          <div className='text-[12px] sm:text-[14px] lg:text-[17px] text-[#def3da] font-semibold'>₹{item.price}</div>
         </div>
-        <div className='w-[10%] h-[100%] bg-transparent flex items-center '>
-          <span className='w-[35px] h-[30%] flex items-center justify-center rounded-md md:hover:bg-red-300 md:hover:text-black cursor-pointer'onClick={()=>removeList(item._id)}>X</span>
+        
+        <div className='flex items-center justify-center'>
+          <button 
+            className='w-[30px] h-[30px] sm:w-[35px] sm:h-[35px] flex items-center justify-center rounded-md bg-red-500 hover:bg-red-600 text-white cursor-pointer transition-colors text-[14px] sm:text-[16px] font-bold'
+            onClick={()=>removeList(item._id)}
+          >
+            ×
+          </button>
         </div>
-        </div>))
+        </div>))}
+        </div>
       )
-      :(<div className='text-white text-lg'>No Product available.</div>)
+      :(<div className='text-white text-[16px] sm:text-[18px] lg:text-[20px] text-center py-[40px]'>No Products available.</div>)
      }
 
         </div>

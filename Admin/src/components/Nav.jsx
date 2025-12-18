@@ -10,8 +10,9 @@ function Nav() {
     const logout=async () => {
         try {
             const result=await axios.get(`${serverurl}/api/auth/logout`,{withCredentials:true});
-            getAdmin()
             console.log(result.data);
+            // Admin state को clear करें
+            getAdmin()
             navigate("/login")
         } catch (error) {
         console.log(error)    

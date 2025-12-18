@@ -24,6 +24,10 @@ function Nav() {
   try {
     const result=await axios.get(`${serverurl}/api/auth/logout`,{withCredentials:true})
     console.log(result.data)
+    
+    getCurrentUser()
+    setshowProfile(false)
+    navigate("/login");
   } catch (error) {
     console.log(error)
   }
@@ -64,7 +68,7 @@ function Nav() {
 {showProfile&&<div className='absolute w-[220px] h-[150px] bg-[#000000d7] top-[110%] right-[4%] border-[1px] border-[#aaa9a9] rounded-[10px] z-10'>
  <ul className='w-[100%] h-[100%] flex items-start justify-around flex-col text-[17px] py-[10px] text-[white] '>
   {!userData&&<li  className='w-[100%] hover:[#2f2f2f] px-[15px] py-[10px] cursor-pointer ' onClick={()=>{navigate("/login");setshowProfile(false)}}>Login</li>}
- { userData&&<li className='w-[100%] hover:[#2f2f2f] px-[15px] py-[10px] cursor-pointer ' onClick={handleLogout}>Logout</li>}
+ { userData&&<li className='w-[100%] hover:[#2f2f2f] px-[15px] py-[10px] cursor-pointer ' onClick={()=>{handleLogout();setshowProfile(false)}}>Logout</li>}
   <li className='w-[100%] hover:[#2f2f2f] px-[15px] py-[10px] cursor-pointer ' onClick={()=>navigate("/order")}>Orders</li>
   <li className='w-[100%] hover:[#2f2f2f] px-[15px] py-[10px] cursor-pointer ' onClick={()=>navigate("/about")}>About</li>
  </ul>
@@ -75,7 +79,7 @@ Home</button>
 
 
 
-<button className='text-white flex items-center justify-center flex-col gap-[2px]'><HiOutlineCollection  className='w-[20px] h-[20px] text-[white] md:hidden 'onClick={()=>navigate("/collection")}/>
+<button className='text-white flex items-center justify-center flex-col gap-[2px]'><HiOutlineCollection  className='w-[20px] h-[20px] text-[white] md:hidden 'onClick={()=>navigate("/collections")}/>
 Collection</button>
 
 

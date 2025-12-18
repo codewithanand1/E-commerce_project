@@ -37,62 +37,53 @@ function ProductDetail() {
 
   return productData?(
     <div>
-   <div className='w-[100vw] h-[130vh] md:h-[100vh] bg-gradient-to-l from-[#141414] to-[#0c2025] flex items-center justify-start flex-col lg:flex-row gap-[20px] '>
-   <div className='lg:w-[50vw] md:w-[90vw] lg:h-[90vh] h-[50vh] mt-[70px] flex items-center justify-center md:gap-[10px] gap-[30px] flex-col-reverse lg:flex-row'>
-     <div className='lg:w-[20%] md:w-[80%] h-[10%] lg:h-[80%] flex items-center justify-center gap-[50px] lg:gap-[20px] lg:flex-col flex-wrap'>
-        <div className='md:w-[100px] w-[50px] h-[50px] md:h-[110px] bg-slate-300 border-[1px] border-[#80808049] rounded-md'>
-          <img src={image1} alt='' className='w-[100%] h-[100%] cursor-pointer rounded-md' onClick={()=>setImage(image1)}/>
+   <div className='w-[100vw] min-h-[100vh] bg-gradient-to-l from-[#141414] to-[#0c2025] flex items-start justify-center flex-col lg:flex-row gap-[20px] px-4 lg:px-0'>
+   
+   {/* Image Section */}
+   <div className='w-full lg:w-[50vw] mt-[70px] flex items-center justify-center gap-[15px] sm:gap-[20px] flex-col-reverse lg:flex-row p-4'>
+     {/* Thumbnail Images */}
+     <div className='w-full lg:w-[20%] flex items-center justify-center gap-[15px] lg:gap-[20px] lg:flex-col'>
+        <div className='w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px] bg-slate-300 border-[1px] border-[#80808049] rounded-md flex-shrink-0'>
+          <img src={image1} alt='' className='w-[100%] h-[100%] cursor-pointer rounded-md object-cover hover:opacity-80 transition-opacity' onClick={()=>setImage(image1)}/>
         </div>
 
-
-
-        <div className='md:w-[100px] w-[50px] h-[50px] md:h-[110px] bg-slate-300 border-[1px] border-[#80808049] rounded-md'>
-          <img src={image2} alt='' className='w-[100%] h-[100%] cursor-pointer rounded-md' onClick={()=>setImage(image2)}/>
+        <div className='w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px] bg-slate-300 border-[1px] border-[#80808049] rounded-md flex-shrink-0'>
+          <img src={image2} alt='' className='w-[100%] h-[100%] cursor-pointer rounded-md object-cover hover:opacity-80 transition-opacity' onClick={()=>setImage(image2)}/>
         </div>
 
-
-        {/* <div className='md:w-[100px] w-[50px] h-[50px] md:h-[110px] bg-slate-300 border-[1px] border-[#80808049] rounded-md'>
-          <img src={image3} alt='' className='w-[100%] h-[100%] cursor-pointer rounded-md'/>
-        </div> */}
-
-        
-
-
-
-        <div className='md:w-[100px] w-[50px] h-[50px] md:h-[110px] bg-slate-300 border-[1px] border-[#80808049] rounded-md'>
-          <img src={image4} alt='' className='w-[100%] h-[100%] cursor-pointer rounded-md'onClick={()=>setImage(image4)}/>
+        <div className='w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px] bg-slate-300 border-[1px] border-[#80808049] rounded-md flex-shrink-0'>
+          <img src={image4} alt='' className='w-[100%] h-[100%] cursor-pointer rounded-md object-cover hover:opacity-80 transition-opacity' onClick={()=>setImage(image4)}/>
         </div>
-
-
      </div>
-             <div className='lg:w-[60%] w-[80%] lg:h-[78%] h-[70%] border-[1px] border-[#80808049] rounded-md overflow-hidden'>
-              <img src={image} alt='' className='w-[100%] lg:h-[100%] h-[100%] text-[30px] text-white text-center rounded-md object-fill'/>
-             </div>
-
+     
+     {/* Main Image */}
+     <div className='w-full lg:w-[75%] h-[300px] sm:h-[400px] lg:h-[500px] border-[1px] border-[#80808049] rounded-md overflow-hidden'>
+        <img src={image} alt='' className='w-[100%] h-[100%] rounded-md object-cover'/>
+     </div>
    </div>
 
-
-   <div className='lg:w-[50vw] w-[100vw] lg:h-[75vh] h-[40vh] lg:mt-[80px] flex items-center justify-start flex-col py-[20px] px-[30px] md:pb-[20px] md:pl-[20px] lg:pl-[0px] lg:px-[0px] gap-[10px]'>
-    <h1 className='text-[40px] text-white font-semibold'>{productData.name.toUpperCase()}</h1>
-    <p className='text-[30px] font-semibold pl-[5px] text-white '>{currency}{productData.price}</p>
-    <p className='w-[80%] md:w-[60%] text-[20px] font-semibold pl-[5px] text-[white]'>{productData.description}and stylish ,Breathable cotton shirt with a modern slim fit.Easy to wash ,super comfortable and designed for sffortless style.</p>
-    <div className='flex flex-col gap-[10px] my-[10px]'>
-      <p className='text-[25px] font-semibold pl-[5px] text-white'>Select Size</p>
-      <div className='flex gap-2'>
+   {/* Product Info Section */}
+   <div className='w-full lg:w-[50vw] lg:mt-[80px] flex items-start justify-start flex-col py-[20px] px-[20px] lg:px-[40px] gap-[15px] lg:gap-[20px]'>
+    <h1 className='text-[24px] sm:text-[32px] lg:text-[40px] text-white font-semibold text-center lg:text-left'>{productData.name.toUpperCase()}</h1>
+    <p className='text-[24px] sm:text-[28px] lg:text-[30px] font-semibold text-white text-center lg:text-left'>{currency}{productData.price}</p>
+    <p className='w-[100%] text-[16px] sm:text-[18px] lg:text-[20px] font-medium text-[white] leading-relaxed text-center lg:text-left'>{productData.description} and stylish, Breathable cotton shirt with a modern slim fit. Easy to wash, super comfortable and designed for effortless style.</p>
+    
+    <div className='flex flex-col gap-[15px] my-[10px] w-full'>
+      <p className='text-[20px] sm:text-[22px] lg:text-[25px] font-semibold text-white text-center lg:text-left'>Select Size</p>
+      <div className='flex gap-2 flex-wrap justify-center lg:justify-start'>
         {
          productData.sizes.map((item,index)=>(
-          <button key={index} className={`border py-2 px-4 bg-slate-300 rounded-md ${item===size?'bg-black text-blue-600 text-lg':''}`} onClick={()=>setSize(item)}>{item}</button>
+          <button key={index} className={`border py-2 px-4 bg-slate-300 rounded-md text-black font-medium hover:bg-slate-200 transition-colors ${item===size?'bg-black text-blue-600 text-lg border-blue-600':''}`} onClick={()=>setSize(item)}>{item}</button>
          ))
         }
-
       </div>
-      <button className='text-[16px] active:bg-slate-500 cursor-pointer bg-[#495b61c9] py-[10px] px-[20px] rounded-2xl mt-[10px] border-[1px] border-[#80808049] text-white shadow-black' onClick={()=>addtoCart(productData._id,size)}>Add to Cart</button>
+      <button className='w-full sm:w-auto text-[16px] sm:text-[18px] active:bg-slate-500 cursor-pointer bg-[#495b61c9] py-[12px] px-[30px] rounded-2xl mt-[10px] border-[1px] border-[#80808049] text-white shadow-black hover:bg-[#5a6b71] transition-colors' onClick={()=>addtoCart(productData._id,size)}>Add to Cart</button>
     </div>
     
-    <div className='w-[80%] text-[16px] text-white'>
-      <p>100% original Product.</p>
-      <p>Cash on delivery is available on this product</p>
-      <p>East return is available an exchange policy within 7 days</p>
+    <div className='w-[100%] text-[14px] sm:text-[16px] text-white space-y-1 text-center lg:text-left'>
+      <p>✓ 100% original Product.</p>
+      <p>✓ Cash on delivery is available on this product</p>
+      <p>✓ Easy return is available with exchange policy within 7 days</p>
     </div>
    </div>
    
