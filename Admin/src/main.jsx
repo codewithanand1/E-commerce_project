@@ -4,7 +4,7 @@ import './index.css'
 import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import AdminContext from './context/AdminContext.jsx'
-export const serverurl="https://e-commerce-backed-yd8h.onrender.com"
+export const serverurl="https://e-commerce-backend-i18h.onrender.com"
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
   <AdminContext>
