@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors(
     {
-    origin:true,
+    origin:"https://e-commerce-fronted-81fo.onrender.com",
     credentials:true
     }
 ))
