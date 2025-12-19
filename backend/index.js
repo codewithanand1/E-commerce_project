@@ -17,23 +17,12 @@ const app = express();
 /* ---------- middleware ---------- */
 app.use(express.json());
 app.use(cookieParser());
-<<<<<<< HEAD
 app.use(cors(
     {
     origin:["http://localhost:5173","http://localhost:5174","https://e-commerce-fronted-81fo.onrender.com","https://e-commerce-admin-panel-eosin.vercel.app"],
     credentials:true
     }
-))
-=======
->>>>>>> 7d2b19a30b217f4d5a7b97291d2c063dcb40208b
-
-app.use(
-  cors({
-    origin: "https://e-commerce-fronted-81fo.onrender.com",
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE"],
-  })
-);
+));
 
 /* ---------- routes ---------- */
 app.use("/api/auth", authRoutes);

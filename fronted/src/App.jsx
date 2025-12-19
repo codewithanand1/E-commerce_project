@@ -16,13 +16,7 @@ import Order from './pages/Order'
 import PageNotFound from './pages/PageNotFound'
 import Ai from './components/Ai'
 
-<<<<<<< HEAD
-// export const serverurl="http://localhost:8000"
 export const serverurl="https://e-commerce-backend-i18h.onrender.com"
-=======
-export const serverurl="https://e-commerce-backend-i18h.onrender.com"
-
->>>>>>> 7d2b19a30b217f4d5a7b97291d2c063dcb40208b
 function App() {
   const {userData}=useContext(userDataContext);
    let location=useLocation()
