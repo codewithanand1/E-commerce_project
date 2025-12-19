@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors(
     {
-    origin:["http://localhost:5173","http://localhost:5174","https://onecartshopping.netlify.app"],
+    origin:["http://localhost:5173","http://localhost:5174","https://e-commerce-fronted-81fo.onrender.com","https://e-commerce-admin-panel-eosin.vercel.app"],
     credentials:true
     }
 ))
