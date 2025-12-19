@@ -10,7 +10,6 @@ import { serverurl } from '../App';
 import { FaHome } from "react-icons/fa";
 import { HiOutlineCollection } from "react-icons/hi";
 import { IoIosContact } from "react-icons/io";
-import Collections from '../pages/Collections';
 import { shopDataContext } from '../context/ShopContext';
 
 
