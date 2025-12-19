@@ -33,7 +33,7 @@ app.use("/api/order", orderRoutes);
 
 /* ---------- test ---------- */
 app.get("/", (req, res) => {
-  res.send("Backend running 🚀");
+  res.send("Backend running 🚀 - Clean deployment");
 });
 
 /* ---------- server ---------- */
