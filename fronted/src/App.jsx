@@ -16,7 +16,7 @@ import Order from './pages/Order'
 import PageNotFound from './pages/PageNotFound'
 import Ai from './components/Ai'
 
-export const serverurl="https://e-commerce-backed-yd8h.onrender.com"
+export const serverurl="https://e-commerce-backend-i18h.onrender.com"
 
 function App() {
   const {userData}=useContext(userDataContext);
