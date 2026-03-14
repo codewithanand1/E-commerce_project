@@ -15,6 +15,7 @@ import PlaceOrder from './pages/PlaceOrder'
 import Order from './pages/Order'
 import PageNotFound from './pages/PageNotFound'
 import Ai from './components/Ai'
+import AiAssistant from './pages/AiAssistant'
 
 // Production server URL
 export const serverurl="http://localhost:8000"
@@ -50,6 +51,7 @@ function App() {
 
   <Route path='/order' element={userData?<Order/>:<Navigate to="/login"  state={{from:location.pathname}}/>}></Route>
 
+  <Route path='/ai-assistant' element={userData?<AiAssistant/>:<Navigate to="/login"  state={{from:location.pathname}}/>}></Route>
 
   <Route path='/*' element={<PageNotFound/>}></Route>
      </Routes>

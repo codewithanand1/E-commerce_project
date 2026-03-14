@@ -45,6 +45,7 @@ function Nav() {
       <li className='text-[15px] hover:bg-slate-500 cursor-pointer bg-[#000000c9] py-[10px] px-[20px] rounded-2xl ' onClick={()=>navigate("/collections")}>Collection</li>
       <li className='text-[15px] hover:bg-slate-500 cursor-pointer bg-[#000000c9] py-[10px] px-[20px] rounded-2xl ' onClick={()=>navigate("/about")}>About</li>
       <li className='text-[15px] hover:bg-slate-500 cursor-pointer bg-[#000000c9] py-[10px] px-[20px] rounded-2xl ' onClick={()=>navigate("/contact")}>Contact</li>
+      <li className='text-[15px] hover:bg-[#35c2e1] cursor-pointer bg-[#1a3a45] text-[#35c2e1] py-[10px] px-[20px] rounded-2xl flex items-center gap-1' onClick={()=>navigate("/ai-assistant")}>🤖 AI</li>
      </ul>
      </div>
 
@@ -85,6 +86,9 @@ Collection</button>
 
 <button className='text-white flex items-center justify-center flex-col gap-[2px]'><IoIosContact  className='w-[20px] h-[20px] text-[white] md:hidden ' onClick={()=>navigate("/contact")}/>
 Contact</button>
+
+<button className='text-[#35c2e1] flex items-center justify-center flex-col gap-[2px]'><span className='text-[20px] leading-none' onClick={()=>navigate("/ai-assistant")}>🤖</span>
+AI</button>
 
 
 
