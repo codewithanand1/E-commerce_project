@@ -13,7 +13,7 @@ productRoutes.post("/addproduct",upload.fields([
     {name:"image4",maxCount:1}]),addProduct)
 
 
-productRoutes.get("/list",listproduct);
+productRoutes.get("/list",adminAuth,listproduct);
 productRoutes.post("/remove/:id",adminAuth,removeProduct)
 
 export default productRoutes

@@ -5,13 +5,11 @@ export const addTocart=async (req,res) => {
     try {
         const{itemId,size}=req.body;
         const userData=await User.findById(req.userId);
-
         //check if user exist
         if(!userData)
         {
-            return res.status(404).json({message:"User Not Found"})
+   return res.status(404).json({message:"User Not Found"})
         }
-        //Ensure cartData is initilized
         let cartData=userData.cartData||{};
 
         if(cartData[itemId])
@@ -35,6 +33,7 @@ export const addTocart=async (req,res) => {
         return res.status(500).json({message:"addtocart error"})
     }
 }
+
 
 export const UpdateCart=async (req,res) => {
     try {

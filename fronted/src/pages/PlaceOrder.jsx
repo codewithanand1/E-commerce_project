@@ -121,10 +121,12 @@ function PlaceOrder() {
 
   return (
     <div className='w-[100vw] min-h-[100vh] bg-gradient-to-l from-[#141414] to-[#0c2025] flex items-start justify-center flex-col lg:flex-row gap-[30px] sm:gap-[50px] relative px-4 lg:px-0'>
+    
+    {/* Delivery Form */}
     <div className='w-full lg:w-[50%] flex items-center justify-center mt-[80px] lg:mt-[100px]'>
       <form className='w-full max-w-[600px] lg:w-[70%]' onSubmit={onSubmitHandler}>
         <div className='py-[10px] mb-[20px]'>
-          <Tittle  text1={"DELIVERY"} text2={"INFORMATION"}/>
+          <Tittle text1={"DELIVERY"} text2={"INFORMATION"}/>
         </div>
         
         <div className='w-[100%] flex flex-col sm:flex-row items-center justify-between gap-[15px] sm:gap-[10px] px-[10px] mb-[15px]'>
@@ -153,32 +155,28 @@ function PlaceOrder() {
         <div className='w-[100%] flex items-center justify-between px-[10px] mb-[20px]'>
             <input type='number' placeholder='Phone' className='w-[100%] h-[45px] sm:h-[50px] rounded-md bg-slate-700 placeholder:text-white text-[16px] sm:text-[18px] px-[15px] sm:px-[20px] shadow-sm shadow-[#343434]' onChange={onchangeHandle} name='phone' value={formData.phone} required/>
         </div>
-      </form>
-     
-    </div>
-     <div className='w-full lg:w-[50%] flex items-center justify-center gap-[20px] sm:gap-[30px] mt-[20px] lg:mt-[100px]'>
-        <div className='w-full max-w-[600px] lg:w-[70%] flex items-center justify-center gap-[15px] sm:gap-[20px] flex-col px-4 lg:px-0'>
+
+        {/* Cart Total + Payment + Submit - all inside form */}
+        <div className='w-full flex flex-col gap-[15px] sm:gap-[20px] px-[10px]'>
           <CartTotal/>
-          <div className='py-[10px] mb-[10px]'>
+          <div className='py-[5px]'>
             <Tittle text1={"PAYMENT"} text2={"METHODS"}/>
           </div>
-          <div className='w-[100%] flex items-center justify-center gap-[20px] sm:gap-[30px] lg:gap-[50px] flex-col sm:flex-row'>
-             <button onClick={()=>setmethod('razorpay')} className={`w-[120px] sm:w-[150px] h-[40px] sm:h-[50px] rounded-sm transition-all ${method==='razorpay'?'border-[3px] sm:border-[5px] border-blue-700 rounded-sm':'border-2 border-gray-400'}`}>
+          <div className='w-[100%] flex items-center justify-start gap-[20px] sm:gap-[30px] flex-wrap'>
+             <button type='button' onClick={()=>setmethod('razorpay')} className={`w-[120px] sm:w-[150px] h-[40px] sm:h-[50px] rounded-sm transition-all ${method==='razorpay'?'border-[3px] sm:border-[5px] border-blue-700':'border-2 border-gray-400'}`}>
                <img src={razorpay} className='w-[100%] h-[100%] object-cover rounded-sm' alt="Razorpay"/>
              </button>
-
-             <button onClick={()=>setmethod('cod')} className={`w-[160px] sm:w-[200px] h-[40px] sm:h-[50px] bg-gradient-to-t from-[#95b3f8] to-[white] text-[12px] sm:text-[14px] px-[15px] sm:px-[20px] rounded-b-sm text-[#332f6f] font-bold transition-all ${method==='cod'?'border-[3px] sm:border-[5px] border-blue-700 rounded-sm':'border-2 border-gray-400'}`}>
+             <button type='button' onClick={()=>setmethod('cod')} className={`w-[160px] sm:w-[200px] h-[40px] sm:h-[50px] bg-gradient-to-t from-[#95b3f8] to-[white] text-[12px] sm:text-[14px] px-[15px] sm:px-[20px] rounded-sm text-[#332f6f] font-bold transition-all ${method==='cod'?'border-[3px] sm:border-[5px] border-blue-700':'border-2 border-gray-400'}`}>
                Cash On Delivery
              </button>
           </div>
           
-          <div className='w-full flex justify-center mt-[20px] sm:mt-[30px]'>
-            <button type='submit' className='w-full sm:w-auto text-[16px] sm:text-[18px] hover:bg-amber-500 cursor-pointer bg-[#3bcee848] py-[12px] px-[30px] sm:px-[50px] rounded-2xl text-white flex items-center justify-center border-[1px] border-[#80808049] transition-colors'>
-              Place Order
-            </button>
-          </div>
+          <button type='submit' className='w-full sm:w-auto text-[16px] sm:text-[18px] hover:bg-amber-500 cursor-pointer bg-[#3bcee848] py-[12px] px-[30px] sm:px-[50px] rounded-2xl text-white flex items-center justify-center border-[1px] border-[#80808049] transition-colors mt-[10px] mb-[40px]'>
+            Place Order
+          </button>
         </div>
-      </div>
+      </form>
+    </div>
     </div>
   )
 }

@@ -2,7 +2,6 @@ import express from "express"
 import {adminLogin, googleauth, login, logout, registration } from "../controllers/auth.controller.js";
 
 const authRoutes=express.Router();
-console.log("kkkk")
 authRoutes.post("/registration",registration);
 authRoutes.post("/googleregistration",googleauth);
 authRoutes.post("/login",login);
