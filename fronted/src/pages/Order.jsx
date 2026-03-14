@@ -13,20 +13,20 @@ function Order() {
             const result=await axios.post(`${serverurl}/api/order/userorder`,{},{withCredentials:true})
             if(result.data)
             {
-                let allOrdersItem=[]
+                let allOrdersItem=[];
                 result.data.map((order)=>(
                     order.items.map((item)=>{
                         item['status']=order.status;
                         item['payment']=order.payment
-                        item['paymentMethod']=order.paymentMethod
+                        item['paymentMethod']=order.paymentMethod;
                         item['date']=order.date
-                        allOrdersItem.push(item)
+                        allOrdersItem.push(item);
                     })
                 ))
-                setOrderData(allOrdersItem.reverse())
+                setOrderData(allOrdersItem.reverse());
             }
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
     }
 
@@ -34,6 +34,9 @@ function Order() {
     useEffect(()=>{
         loadOrderData()
     },[])
+
+        console.log("HERE ORDERS=>"+orderData);
+        
   return (
     <div className='w-[100vw] min-h-[100vh] p-[10px] sm:p-[20px] pb-[15px] overflow-hidden bg-gradient-to-l from-[#141414] to-[#0c2025]'>
        <div className='w-[100%] text-center mt-[80px] mb-[20px]'>
@@ -49,14 +52,14 @@ function Order() {
                     <p className='text-[18px] sm:text-[20px] lg:text-[25px] text-white font-medium'>{item.name}</p>
                      <div className='flex items-center gap-[10px] sm:gap-[15px] lg:gap-[20px] flex-wrap'>
                         <p className='text-[14px] sm:text-[16px] lg:text-[18px] text-[#aaf4e7]'>{currency}{item.price}</p>
-                        <p className='text-[14px] sm:text-[16px] lg:text-[18px] text-[#aaf4e7]'>Qty: {item.quantity}</p>
+                        <p className='text-[14px] sm:text-[16px] lg:text-[18px] text-[#aaf4e7]'>Qty:{item.quantity}</p>
                         <p className='text-[14px] sm:text-[16px] lg:text-[18px] text-[#aaf4e7]'>Size: {item.size}</p>
                      </div>
                      <div className='flex items-center'>
                       <p className='text-[14px] sm:text-[16px] lg:text-[18px] text-[#aaf4e7]'>Date: <span className='text-white pl-[5px] sm:pl-[10px]'>{new Date(item.date).toDateString()}</span></p>
                      </div>
                      <div className='flex items-center'>
-                         <p className='text-[14px] sm:text-[16px] text-[#aaf4e7]'>Payment: {item.paymentMethod}</p>
+                         <p className='text-[14px] sm:text-[16px] text-[#aaf4e7]'>Payment-mode:{item.paymentMethod}</p>
                      </div>
                      
                      <div className='flex items-center justify-between mt-2 sm:mt-0 sm:absolute sm:right-[20px] sm:top-[20px] gap-3'>
